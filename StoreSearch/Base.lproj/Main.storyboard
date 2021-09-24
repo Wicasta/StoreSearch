@@ -20,6 +20,13 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Uyp-Wt-VP4">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="H50-7T-0q0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <items>
+                                        <barButtonItem title="Item" id="FOR-O7-dnK"/>
+                                    </items>
+                                </toolbar>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="TlI-AT-s8J"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="sTO-wU-VFG"/>
@@ -33,21 +40,45 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="eS6-EK-l6G"/>
                                 </connections>
                             </searchBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4H-po-PJF">
+                                <rect key="frame" x="0.0" y="51" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="TVB-Ts-FxN">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Ldu-QZ-J4o">
+                                            <rect key="frame" x="16" y="5.5" width="343" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="All"/>
+                                                <segment title="Music"/>
+                                                <segment title="Software"/>
+                                                <segment title="E-Books"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Lc3-ww-phm"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="H4H-po-PJF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="17b-XV-fau"/>
                             <constraint firstItem="Uyp-Wt-VP4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="A3p-4B-gNE"/>
                             <constraint firstItem="3LN-Rg-4fc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="I49-BU-yjN"/>
                             <constraint firstItem="Uyp-Wt-VP4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QAS-Y5-5ww"/>
                             <constraint firstItem="Uyp-Wt-VP4" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QZk-M0-VSe"/>
+                            <constraint firstItem="H4H-po-PJF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WRK-Gn-qbQ"/>
                             <constraint firstItem="3LN-Rg-4fc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pyJ-T9-3cO"/>
+                            <constraint firstItem="H4H-po-PJF" firstAttribute="top" secondItem="3LN-Rg-4fc" secondAttribute="bottom" id="yh0-oX-v2m"/>
                             <constraint firstItem="3LN-Rg-4fc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="z50-hl-ZEC"/>
                             <constraint firstItem="Uyp-Wt-VP4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zJP-QJ-je1"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="3LN-Rg-4fc" id="ANZ-u1-pT7"/>
+                        <outlet property="segmentedControl" destination="Ldu-QZ-J4o" id="xGe-jl-d8W"/>
                         <outlet property="tableView" destination="Uyp-Wt-VP4" id="y3v-Gb-1WB"/>
                     </connections>
                 </viewController>
