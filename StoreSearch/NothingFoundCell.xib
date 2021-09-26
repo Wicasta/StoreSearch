@@ -28,7 +28,7 @@
                     <constraint firstItem="AR7-TO-Goq" firstAttribute="centerY" secondItem="sEb-zP-QZG" secondAttribute="centerY" id="zrg-v9-hc7"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="135" y="66"/>
+            <point key="canvasLocation" x="162" y="17"/>
         </tableViewCell>
     </objects>
     <resources>
